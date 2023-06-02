@@ -176,9 +176,9 @@ if(!empty($_SESSION['cart'])){
 					<th class="cart-product-name item">Product Name</th>
 			
 					<th class="cart-qty item">Quantity</th>
-					<th class="cart-sub-total item">Price Per unit</th>
-					<th class="cart-sub-total item">Shipping Charge</th>
-					<th class="cart-total last-item">Grandtotal</th>
+					<th class="cart-sub-total item">Book for exchange</th>
+					<th class="cart-sub-total item">&nbsp;</th>
+					<th class="cart-total last-item">&nbsp;</th>
 				</tr>
 			</thead><!-- /thead -->
 			<tfoot>
@@ -254,10 +254,10 @@ $num=mysqli_num_rows($rt);
 				             
 			              </div>
 		            </td>
-					<td class="cart-product-sub-total"><span class="cart-sub-total-price"><?php echo "Rs"." ".$row['productPrice']; ?>.00</span></td>
-<td class="cart-product-sub-total"><span class="cart-sub-total-price"><?php echo "Rs"." ".$row['shippingCharge']; ?>.00</span></td>
+					<td class="cart-product-sub-total"><span class="cart-sub-total-price"><?php echo $row['productBook']; ?></span></td>
+<td class="cart-product-sub-total">&nbsp;</td>
 
-					<td class="cart-product-grand-total"><span class="cart-grand-total-price"><?php echo ($_SESSION['cart'][$row['id']]['quantity']*$row['productPrice']+$row['shippingCharge']); ?>.00</span></td>
+					<td class="cart-product-grand-total">&nbsp;</td>
 				</tr>
 
 				<?php } }
@@ -373,16 +373,7 @@ while($row=mysqli_fetch_array($query))
 </div>
 <div class="col-md-4 col-sm-12 cart-shopping-total">
 	<table class="table table-bordered">
-		<thead>
-			<tr>
-				<th>
-					
-					<div class="cart-grand-total">
-						Grand Total<span class="inner-left-md"><?php echo $_SESSION['tp']="$totalprice". ".00"; ?></span>
-					</div>
-				</th>
-			</tr>
-		</thead><!-- /thead -->
+		<!-- /thead -->
 		<tbody>
 				<tr>
 					<td>
@@ -397,7 +388,8 @@ while($row=mysqli_fetch_array($query))
 	<?php } else {
 echo "Your shopping Cart is empty";
 		}?>
-</div>			</div>
+</div>			
+</div>
 		</div> 
 		</form>
 <?php echo include('includes/brands-slider.php');?>
