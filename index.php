@@ -156,13 +156,12 @@ while ($row=mysqli_fetch_array($ret))
 		
 		<div class="product-info text-left">
 			<h3 class="name"><a href="product-details.php?pid=<?php echo htmlentities($row['id']);?>"><?php echo htmlentities($row['productName']);?></a></h3>
-			<div class="rating rateit-small"></div>
+			
 			<div class="description"></div>
 
 			<div class="product-price">	
 				<span class="price">
-					Rs.<?php echo htmlentities($row['productPrice']);?>			</span>
-										     <span class="price-before-discount">Rs.<?php echo htmlentities($row['productPriceBeforeDiscount']);?>	</span>
+				<?php echo htmlentities($row['productbook']);?>			</span>
 									
 			</div><!-- /.product-price -->
 			
@@ -214,17 +213,9 @@ while ($row=mysqli_fetch_array($ret))
 		
 		<div class="product-info text-left">
 			<h3 class="name"><a href="product-details.php?pid=<?php echo htmlentities($row['id']);?>"><?php echo htmlentities($row['productName']);?></a></h3>
-			<div class="rating rateit-small"></div>
+			
 			<div class="description"></div>
 
-			<div class="product-price">	
-				<span class="price">
-					Rs. <?php echo htmlentities($row['productPrice']);?>			</span>
-										     <span class="price-before-discount">Rs.<?php echo htmlentities($row['productPriceBeforeDiscount']);?></span>
-									
-			</div><!-- /.product-price -->
-			
-		</div><!-- /.product-info -->
 				<?php if($row['productAvailability']=='In Stock'){?>
 					<div class="action"><a href="index.php?page=product&action=add&id=<?php echo $row['id']; ?>" class="lnk btn btn-primary">Add to Cart</a></div>
 				<?php } else {?>
@@ -272,13 +263,11 @@ while ($row=mysqli_fetch_array($ret))
 		
 		<div class="product-info text-left">
 			<h3 class="name"><a href="product-details.php?pid=<?php echo htmlentities($row['id']);?>"><?php echo htmlentities($row['productName']);?></a></h3>
-			<div class="rating rateit-small"></div>
+			
 			<div class="description"></div>
 
 			<div class="product-price">	
-				<span class="price">
-					Rs.<?php echo htmlentities($row['productPrice']);?>			</span>
-										     <span class="price-before-discount">Rs.<?php echo htmlentities($row['productPriceBeforeDiscount']);?></span>
+				<span class="price"><?php echo htmlentities($row['productbook']);?>			</span>
 									
 			</div>
 			
@@ -340,10 +329,9 @@ while ($row=mysqli_fetch_array($ret))
 									<div class="col col-xs-6">
 										<div class="product-info">
 											<h3 class="name"><a href="product-details.php?pid=<?php echo htmlentities($row['id']);?>"><?php echo htmlentities($row['productName']);?></a></h3>
-											<div class="rating rateit-small"></div>
 											<div class="product-price">	
 												<span class="price">
-													Rs. <?php echo htmlentities($row['productPrice']);?>
+													<?php echo htmlentities($row['productbook']);?>
 												</span>
 
 											</div><!-- /.product-price -->
